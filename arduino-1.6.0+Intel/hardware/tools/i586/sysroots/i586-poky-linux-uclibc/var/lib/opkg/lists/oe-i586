@@ -1,0 +1,1177 @@
+Package: gcc-runtime-dbg
+Version: 4.7.2-r20
+Recommends: libc-dbg, libgcc-s-dbg, uclibc-libpthread-dbg, uclibc-libm-dbg
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: d31f829b7608e083dcc8cf0e29bc923c
+Size: 1497428
+Filename: gcc-runtime-dbg_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20 - Debugging files  The GNU cc and gcc C
+ compilers.  This package contains ELF symbols and   related sources for
+ debugging purposes.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libc-dbg
+Version: 0_9_33-r8.4
+Recommends: uclibc-libdl-dbg, libc0 (= 0_9_33-r8.4), uclibc-libpthread-dbg
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 197e8232f1297bc2b0ee2c8422a54532
+Size: 2404988
+Filename: libc-dbg_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems - Debugging files  The name uClibc is an
+ abbreviation for 'the microcontroller C library'.   For simplicity,
+ uClibc is pronounced 'yew-see-lib-see'.  The goal of   uClibc is to
+ provide as much functionality as possible in a small amount   of space,
+ and it is intended primarily for embedded use. It is also   highly
+ configurable in supported features, at the cost of ABI differences   for
+ different configurations. uClibc has been designed from the ground up
+ to be a C library for embedded Linux.  It is NOT compatible with binaries
+ linked against glibc.  This package contains ELF symbols and related
+ sources for debugging purposes.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libc-dev
+Version: 0_9_33-r8.4
+Depends: libuargp0, libubacktrace0, libresolv0, libthread-db1, libdl0, libm0, libnsl0, libutil0, libcrypt0, linux-libc-headers-dev, librt0
+Provides: virtual-libc-dev, libc-dev
+Recommends: uclibc-librt-dev, uclibc-libpthread-dev, uclibc-libdl-dev, uclibc-libcrypt-dev, uclibc-libm-dev, uclibc-argp-dev, linux-libc-headers-dev, uclibc-libutil-dev, uclibc-thread-db-dev, uclibc-libresolv-dev, uclibc-libnsl-dev, uclibc-backtrace-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 3c15721d68521b98e4db2aa3c2f74de7
+Size: 417804
+Filename: libc-dev_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems - Development files  The name uClibc is an
+ abbreviation for 'the microcontroller C library'.   For simplicity,
+ uClibc is pronounced 'yew-see-lib-see'.  The goal of   uClibc is to
+ provide as much functionality as possible in a small amount   of space,
+ and it is intended primarily for embedded use. It is also   highly
+ configurable in supported features, at the cost of ABI differences   for
+ different configurations. uClibc has been designed from the ground up
+ to be a C library for embedded Linux.  It is NOT compatible with binaries
+ linked against glibc.  This package contains symbolic links, header
+ files, and related items necessary for software development.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libc-staticdev
+Version: 0_9_33-r8.4
+Depends: libc-dev (= 0_9_33-r8.4)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 28bd07867f2c9aefa0a797b27e63a270
+Size: 2546086
+Filename: libc-staticdev_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems - Development files (Static Libraries)
+ The name uClibc is an abbreviation for 'the microcontroller C library'.
+ For simplicity, uClibc is pronounced 'yew-see-lib-see'.  The goal of
+ uClibc is to provide as much functionality as possible in a small amount
+ of space, and it is intended primarily for embedded use. It is also
+ highly configurable in supported features, at the cost of ABI differences
+ for different configurations. uClibc has been designed from the ground up
+ to be a C library for embedded Linux.  It is NOT compatible with binaries
+ linked against glibc.  This package contains static libraries for
+ software development.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libc-utils-dbg
+Version: 0_9_33-r8.4
+Recommends: uclibc-libdl-dbg, libc-dbg, uclibc-libpthread-dbg
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 742c4ab57b71d55caa1742f9df7e61cc
+Size: 3234
+Filename: libc-utils-dbg_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libc-utils
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 647d288eb4c2a3481207929e9ab1689c
+Size: 7880
+Filename: libc-utils_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libc0
+Version: 0_9_33-r8.4
+Provides: rtld(GNU_HASH), libsegfault
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: df2e12e42131c94931e0b8546ad777e5
+Size: 244754
+Filename: libc0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libcrypt0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 37e6a40d9500c640d08af8a6f0d28e2d
+Size: 7180
+Filename: libcrypt0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libdl0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: d193e3a437433b899496cd365d047bd7
+Size: 7072
+Filename: libdl0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libform5
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libtinfo5 (>= 5.9), libncurses5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: c08778fd8e748537dd0feb0c6919bccd
+Size: 27728
+Filename: libform5_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  ncurses form library
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: libgcc-s-dbg
+Version: 4.7.2-r20
+Recommends: libgcc1 (= 4.7.2-r20), libc-dbg
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 853ae9ce8298214fdf822fad7ef554cb
+Size: 84768
+Filename: libgcc-s-dbg_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  libgcc version 4.7.2-r20 - Debugging files  The GNU cc and gcc C
+ compilers.  This package contains ELF symbols and   related sources for
+ debugging purposes.
+OE: libgcc
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libgcc-s-dev
+Version: 4.7.2-r20
+Depends: libgcc1 (= 4.7.2-r20)
+Recommends: libc-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 391bacb338fe3566e86501d9c85c82a2
+Size: 196430
+Filename: libgcc-s-dev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  libgcc version 4.7.2-r20 - Development files  The GNU cc and gcc C
+ compilers.  This package contains symbolic links,   header files, and
+ related items necessary for software development.
+OE: libgcc
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libgcc1
+Version: 4.7.2-r20
+Depends: libc0 (>= 0_9_33)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 3df0349ee18029f4146d31d673778484
+Size: 39212
+Filename: libgcc1_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  libgcc version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: libgcc
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libgcov-dev
+Version: 4.7.2-r20
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 2f3e4c07020e51e6eabbc4b9cdfbd34f
+Size: 34164
+Filename: libgcov-dev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  libgcc version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: libgcc
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libgomp-dev
+Version: 4.7.2-r20
+Depends: libgomp1
+Recommends: libgcc-s-dev, uclibc-libpthread-dev, libc-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 8e662898f57f1a20dc46734f9c3753ae
+Size: 3452
+Filename: libgomp-dev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libgomp-staticdev
+Version: 4.7.2-r20
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 6c91b85c93e86bafb37fc2c4f1d7f9e1
+Size: 144696
+Filename: libgomp-staticdev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libgomp1
+Version: 4.7.2-r20
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libpthread0 (>= 0_9_33)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 7c57ddb80213905f832ad532a1e758df
+Size: 28466
+Filename: libgomp1_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libm0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 2051a3bfced36458ed631bb0597e4c92
+Size: 31214
+Filename: libm0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libmenu5
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libtinfo5 (>= 5.9), libncurses5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: cbeb57bfbec5e37f044b54433af6b7de
+Size: 14944
+Filename: libmenu5_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  ncurses menu library
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: libncurses5
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libtinfo5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 296693680b8aa14e34c825306e96667d
+Size: 68372
+Filename: libncurses5_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  ncurses ncurses library
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: libnsl0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 621b078bac4574f3bef14f169d985141
+Size: 1960
+Filename: libnsl0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libopkg-dev
+Version: 1:0.1.8+svnr649-r13.0
+Depends: libopkg1
+Recommends: libgcc-s-dev, libc-dev
+Section: base
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 321e83affda72654d73fe3fdad63b11e
+Size: 1314
+Filename: libopkg-dev_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0  Open Package Manager
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: libopkg-staticdev
+Version: 1:0.1.8+svnr649-r13.0
+Section: base
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: a20130700f5984f9cf4ca1c1468f8a9f
+Size: 387506
+Filename: libopkg-staticdev_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0  Open Package Manager
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: libopkg1
+Version: 1:0.1.8+svnr649-r13.0
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33)
+Section: base
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 644437a196b193ef825df1ad0667a054
+Size: 84958
+Filename: libopkg1_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0  Open Package Manager Library
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: libpanel5
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libtinfo5 (>= 5.9), libncurses5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 58ef2bda8f1373df3e094ffbfe83ff10
+Size: 5574
+Filename: libpanel5_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  ncurses panel library
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: libpthread0
+Version: 0_9_33-r8.4
+Depends: libdl0 (>= 0_9_33), libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: dca90357d340733895e690c5b6ff9316
+Size: 35058
+Filename: libpthread0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libresolv0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 75ef9e9f4b1d9255a2d20085e2b60456
+Size: 1964
+Filename: libresolv0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: librt0
+Version: 0_9_33-r8.4
+Depends: libdl0 (>= 0_9_33), libpthread0 (>= 0_9_33), libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 4c55253f1744ff0420e7793544b924bd
+Size: 9534
+Filename: librt0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libssp-dev
+Version: 4.7.2-r20
+Depends: libssp0
+Recommends: libgcc-s-dev, libc-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 8eead0a907814d8c6a6bd532f3e240dd
+Size: 5774
+Filename: libssp-dev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libssp-staticdev
+Version: 4.7.2-r20
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 2d6a14819db3d2c919543f39cce6cee0
+Size: 12906
+Filename: libssp-staticdev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libssp0
+Version: 4.7.2-r20
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 83db74c53f6fcc52e24646abe64101bb
+Size: 5420
+Filename: libssp0_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libstdc++-dev
+Version: 4.7.2-r20
+Depends: libstdc++6
+Recommends: libgcc-s-dev, libc-dev, uclibc-libm-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 603d4c2c62871433139ca32e12b101d6
+Size: 1025842
+Filename: libstdc++-dev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libstdc++-staticdev
+Version: 4.7.2-r20
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 0e59264382d8c6ad4e2c469d9065ff08
+Size: 2685942
+Filename: libstdc++-staticdev_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libstdc++6
+Version: 4.7.2-r20
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libm0 (>= 0_9_33)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 4bff5350a4091bae771e2a38a8751e76
+Size: 310218
+Filename: libstdc++6_4.7.2-r20_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2 file://gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch file://100-uclibc-conf.patch file://gcc-uclibc-locale-ctype_touplow_t.patch file://200-uclibc-locale.patch file://203-uclibc-locale-no__x.patch; file://204-uclibc-locale-wchar_fix.patch; file://205-uclibc-locale-update.patch; file://301-missing-execinfo_h.patch file://302-c99-snprintf.patch file://303-c99-complex-ugly-hack.patch file://304-index_macro.patch file://305-libmudflap-susv3-legacy.patch file://306-libstdc++-namespace.patch file://740-sh-pr24836.patch file://800-arm-bigendian.patch file://gcc-poison-system-directories.patch file://gcc-poison-dir-extend.patch file://gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch file://64bithack.patch file://optional_libstdc.patch file://disable_relax_pic_calls_flag.patch file://COLLECT_GCC_OPTIONS.patch file://use-defaults.h-and-t-oe-in-B.patch file://ppc_with_cpu.patch file://ppce5500-e6500-support.patch file://rs6000-tables.patch file://define_insn_reservation.patch file://pr32219.patch file://fortran-cross-compile-hack.patch file://libgcc-sjlj-check.patch file://cpp-honor-sysroot.patch file://mips64-default-n64.patch file://GLIBC_DYNAMIC_LINKER.patch file://arm-hard-float-loader.patch file://gcc-argument-list-too-long.patch file://fix-g++-sysroot.patch file://disablesdt.patch file://libtool.patch file://gcc-armv4-pass-fix-v4bx-to-ld.patch file://ppc_no_crtsavres.patch file://0001-crtstuff.c-USE_PT_GNU_EH_FRAME-Define-for-systems-us.patch file://0001-Makefile.in-vis_hide-gen-hide-list-Do-not-make-defin.patch file://use-ml-conf-files-from-B.patch file://wcast-qual-PR55383.patch file://disable-texinfo-5.patch file://avoid-oob-array-access.patch
+Description:  gcc-runtime version 4.7.2-r20  The GNU cc and gcc C compilers.
+OE: gcc-runtime
+HomePage: http://www.gnu.org/software/gcc/
+License: GPL-3.0-with-GCC-exception & GPLv3
+Priority: optional
+
+Package: libthread-db1
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: a0b1c9aabbbfb08821c7b9bdc4f4be20
+Size: 10172
+Filename: libthread-db1_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libtic5
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libtinfo5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 4becdcda69979667b6e0d5e2d41cd199
+Size: 25740
+Filename: libtic5_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  ncurses tic library
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: libtinfo5
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33)
+Suggests: ncurses-terminfo
+Recommends: ncurses-terminfo-base
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 16a300326bde1f2a00266254335fcc65
+Size: 56360
+Filename: libtinfo5_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  ncurses tinfo library
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: libuargp0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 80fb7fc78437d9a119c7d42e13f22666
+Size: 16670
+Filename: libuargp0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libubacktrace0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33), libdl0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 3412069272135523671aa189608ca162
+Size: 3730
+Filename: libubacktrace0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libutil0
+Version: 0_9_33-r8.4
+Depends: libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: bdf474a710a879e6b9e15cdae3c54220
+Size: 3712
+Filename: libutil0_0_9_33-r8.4_i586.ipk
+Source: git://uclibc.org/uClibc.git;branch=master;protocol=git file://uClibc.machine file://uClibc.distro file://uclibc_enable_log2_test.patch file://powerpc_copysignl.patch file://argp-support.patch file://argp-headers.patch file://remove_attribute_optimize_Os.patch file://compile-arm-fork-with-O2.patch file://orign_path.patch file://0001-atexit_old-Do-not-add-it-to-shared-libc.patch file://0001-nptl-arm-Move-aeabi_read_tp-to-uclibc_nonshared.a.patch file://0001-nptl-atfork-Hide-pthread_atfork-in-shared-versions.patch file://0001-librt-Use-nodefaultlibs-instead-of-nostdlib.patch file://0001-Revert-utent.c-wtent.c-move-functions-from-utxent.c.patch file://0001-i386-sysdep.h-Remove-STABS_-macros.patch
+Description:  C library for embedded systems  The name uClibc is an abbreviation for
+ 'the microcontroller C library'.   For simplicity, uClibc is pronounced
+ 'yew-see-lib-see'.  The goal of   uClibc is to provide as much
+ functionality as possible in a small amount   of space, and it is
+ intended primarily for embedded use. It is also   highly configurable in
+ supported features, at the cost of ABI differences   for different
+ configurations. uClibc has been designed from the ground up   to be a C
+ library for embedded Linux.  It is NOT compatible with binaries   linked
+ against glibc.
+OE: uclibc
+HomePage: unknown
+License: LGPLv2.1+
+Priority: optional
+
+Package: libz-dbg
+Version: 1.2.7-r0
+Recommends: libc-dbg, libz1 (= 1.2.7-r0), libgcc-s-dbg
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 4807e11475bf6f2568a9cc803efa74b3
+Size: 193698
+Filename: libz-dbg_1.2.7-r0_i586.ipk
+Source: http://www.zlib.net/zlib-1.2.7.tar.bz2 file://remove.ldconfig.call.patch
+Description:  Zlib Compression Library - Debugging files  Zlib is a general-purpose,
+ patent-free, lossless data compression library   which is used by many
+ different programs.  This package contains ELF   symbols and related
+ sources for debugging purposes.
+OE: zlib
+HomePage: http://zlib.net/
+License: Zlib
+Priority: optional
+
+Package: libz-dev
+Version: 1.2.7-r0
+Depends: libz1 (= 1.2.7-r0)
+Recommends: libgcc-s-dev, libc-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 75e5d9a931ef4ed94528fd6756851936
+Size: 28988
+Filename: libz-dev_1.2.7-r0_i586.ipk
+Source: http://www.zlib.net/zlib-1.2.7.tar.bz2 file://remove.ldconfig.call.patch
+Description:  Zlib Compression Library - Development files  Zlib is a general-purpose,
+ patent-free, lossless data compression library   which is used by many
+ different programs.  This package contains symbolic   links, header
+ files, and related items necessary for software   development.
+OE: zlib
+HomePage: http://zlib.net/
+License: Zlib
+Priority: optional
+
+Package: libz-doc
+Version: 1.2.7-r0
+Section: doc
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: c26ffd1a1714bd7674742a0d1a95e658
+Size: 2844
+Filename: libz-doc_1.2.7-r0_i586.ipk
+Source: http://www.zlib.net/zlib-1.2.7.tar.bz2 file://remove.ldconfig.call.patch
+Description:  Zlib Compression Library - Documentation files  Zlib is a general-
+ purpose, patent-free, lossless data compression library   which is used
+ by many different programs.  This package contains   documentation.
+OE: zlib
+HomePage: http://zlib.net/
+License: Zlib
+Priority: optional
+
+Package: libz-staticdev
+Version: 1.2.7-r0
+Depends: libz-dev (= 1.2.7-r0)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 44377573ffe6bc0411124ccffae72e42
+Size: 127736
+Filename: libz-staticdev_1.2.7-r0_i586.ipk
+Source: http://www.zlib.net/zlib-1.2.7.tar.bz2 file://remove.ldconfig.call.patch
+Description:  Zlib Compression Library - Development files (Static Libraries)  Zlib is
+ a general-purpose, patent-free, lossless data compression library   which
+ is used by many different programs.  This package contains static
+ libraries for software development.
+OE: zlib
+HomePage: http://zlib.net/
+License: Zlib
+Priority: optional
+
+Package: libz1
+Version: 1.2.7-r0
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 11e742bc02253bd91d43f485d9d905f2
+Size: 49668
+Filename: libz1_1.2.7-r0_i586.ipk
+Source: http://www.zlib.net/zlib-1.2.7.tar.bz2 file://remove.ldconfig.call.patch
+Description:  Zlib Compression Library  Zlib is a general-purpose, patent-free,
+ lossless data compression library   which is used by many different
+ programs.
+OE: zlib
+HomePage: http://zlib.net/
+License: Zlib
+Priority: optional
+
+Package: linux-libc-headers-dbg
+Version: 3.8-r0
+Recommends: linux-libc-headers-dev (= 3.8-r0)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 106487e7c1e1d349127f57e86fce1627
+Size: 800
+Filename: linux-libc-headers-dbg_3.8-r0_i586.ipk
+Source: http://kernel.org/pub/linux/kernel/v3.0/linux-3.8.tar.bz2 file://scripts-Makefile.headersinst-install-headers-from-sc.patch
+Description:  linux-libc-headers version 3.8-r0 - Debugging files  Sanitized set of
+ kernel headers for the C library's use.  This package   contains ELF
+ symbols and related sources for debugging purposes.
+OE: linux-libc-headers
+HomePage: unknown
+License: GPLv2
+Priority: optional
+
+Package: linux-libc-headers-dev
+Version: 3.8-r0
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 96c5c2fdbd90d922ac76a9a8b9c09a40
+Size: 890798
+Filename: linux-libc-headers-dev_3.8-r0_i586.ipk
+Source: http://kernel.org/pub/linux/kernel/v3.0/linux-3.8.tar.bz2 file://scripts-Makefile.headersinst-install-headers-from-sc.patch
+Description:  linux-libc-headers version 3.8-r0 - Development files  Sanitized set of
+ kernel headers for the C library's use.  This package   contains symbolic
+ links, header files, and related items necessary for   software
+ development.
+OE: linux-libc-headers
+HomePage: unknown
+License: GPLv2
+Priority: optional
+
+Package: ncurses-dbg
+Version: 5.9-r15.1
+Recommends: ncurses (= 5.9-r15.1), libgcc-s-dbg, ncurses-libtinfo-dbg, libc-dbg, ncurses-libtic-dbg, ncurses-libncurses-dbg
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 23be2b8db3033100336fe94b2860e6f1
+Size: 1026040
+Filename: ncurses-dbg_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library - Debugging files  SVr4 and XSI-Curses compatible
+ curses library and terminfo tools   including tic, infocmp, captoinfo.
+ Supports color, multiple highlights,   forms-drawing characters, and
+ automatic recognition of keypad and   function-key sequences. Extensions
+ include resizable windows and mouse   support on both xterm and Linux
+ console using the gpm library.  This   package contains ELF symbols and
+ related sources for debugging purposes.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses-dev
+Version: 5.9-r15.1
+Depends: libtinfo5, ncurses (= 5.9-r15.1), libform5, libtic5, libpanel5, libmenu5
+Recommends: ncurses-libmenu-dev, ncurses-libpanel-dev, update-alternatives-cworth-dev, ncurses-libtinfo-dev, ncurses-libform-dev, ncurses-libtic-dev, ncurses-libncurses-dev, ncurses-terminfo-base-dev, libc-dev, libgcc-s-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: d0cf59888fc5f641852fbe285ca339f2
+Size: 68238
+Filename: ncurses-dev_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library - Development files  SVr4 and XSI-Curses
+ compatible curses library and terminfo tools   including tic, infocmp,
+ captoinfo. Supports color, multiple highlights,   forms-drawing
+ characters, and automatic recognition of keypad and   function-key
+ sequences. Extensions include resizable windows and mouse   support on
+ both xterm and Linux console using the gpm library.  This   package
+ contains symbolic links, header files, and related items   necessary for
+ software development.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses-doc
+Version: 5.9-r15.1
+Section: doc
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 1188117f7ce7ca4670666a3d953579e0
+Size: 205894
+Filename: ncurses-doc_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library - Documentation files  SVr4 and XSI-Curses
+ compatible curses library and terminfo tools   including tic, infocmp,
+ captoinfo. Supports color, multiple highlights,   forms-drawing
+ characters, and automatic recognition of keypad and   function-key
+ sequences. Extensions include resizable windows and mouse   support on
+ both xterm and Linux console using the gpm library.  This   package
+ contains documentation.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses-staticdev
+Version: 5.9-r15.1
+Depends: ncurses-dev (= 5.9-r15.1)
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: a02d8bccb152906ea569ee34ef0aee64
+Size: 1160620
+Filename: ncurses-staticdev_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library - Development files (Static Libraries)  SVr4 and
+ XSI-Curses compatible curses library and terminfo tools   including tic,
+ infocmp, captoinfo. Supports color, multiple highlights,   forms-drawing
+ characters, and automatic recognition of keypad and   function-key
+ sequences. Extensions include resizable windows and mouse   support on
+ both xterm and Linux console using the gpm library.  This   package
+ contains static libraries for software development.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses-terminfo-base
+Version: 5.9-r15.1
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: c19143852225d062017a1f54e782d11b
+Size: 5074
+Filename: ncurses-terminfo-base_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  SVr4 and XSI-Curses compatible curses library and
+ terminfo tools   including tic, infocmp, captoinfo. Supports color,
+ multiple highlights,   forms-drawing characters, and automatic
+ recognition of keypad and   function-key sequences. Extensions include
+ resizable windows and mouse   support on both xterm and Linux console
+ using the gpm library.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses-terminfo
+Version: 5.9-r15.1
+Depends: ncurses-terminfo-base
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 5b3ca552f4fd9f0630f5f7c1f372adb3
+Size: 415584
+Filename: ncurses-terminfo_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  SVr4 and XSI-Curses compatible curses library and
+ terminfo tools   including tic, infocmp, captoinfo. Supports color,
+ multiple highlights,   forms-drawing characters, and automatic
+ recognition of keypad and   function-key sequences. Extensions include
+ resizable windows and mouse   support on both xterm and Linux console
+ using the gpm library.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses-tools
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), update-alternatives-cworth, libtinfo5 (>= 5.9), ncurses, libc0 (>= 0_9_33), libtic5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 66a9ad12592e7836229d6bc162279635
+Size: 57998
+Filename: ncurses-tools_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  SVr4 and XSI-Curses compatible curses library and
+ terminfo tools   including tic, infocmp, captoinfo. Supports color,
+ multiple highlights,   forms-drawing characters, and automatic
+ recognition of keypad and   function-key sequences. Extensions include
+ resizable windows and mouse   support on both xterm and Linux console
+ using the gpm library.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: ncurses
+Version: 5.9-r15.1
+Depends: libgcc1 (>= 4.7.2), libc0 (>= 0_9_33), libtinfo5 (>= 5.9)
+Section: libs
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: a43abdd3b224e47cafb0da3c19ae790e
+Size: 12850
+Filename: ncurses_5.9-r15.1_i586.ipk
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz file://tic-hang.patch file://config.cache
+Description:  The New Curses library  SVr4 and XSI-Curses compatible curses library and
+ terminfo tools   including tic, infocmp, captoinfo. Supports color,
+ multiple highlights,   forms-drawing characters, and automatic
+ recognition of keypad and   function-key sequences. Extensions include
+ resizable windows and mouse   support on both xterm and Linux console
+ using the gpm library.
+OE: ncurses
+HomePage: http://www.gnu.org/software/ncurses/ncurses.html
+License: MIT
+Priority: optional
+
+Package: opkg-dbg
+Version: 1:0.1.8+svnr649-r13.0
+Recommends: libc-dbg, opkg (= 1:0.1.8+svnr649-r13.0), libgcc-s-dbg, libopkg-dbg
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 89f79ce68dc7208acf75cfe380c465ac
+Size: 311730
+Filename: opkg-dbg_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0 - Debugging files  Open Package Manager
+ This package contains ELF symbols and related   sources for debugging
+ purposes.
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: opkg-dev
+Version: 1:0.1.8+svnr649-r13.0
+Depends: opkg (= 1:0.1.8+svnr649-r13.0)
+Recommends: libgcc-s-dev, update-alternatives-cworth-dev, libc-dev, opkg-config-base-dev, libopkg-dev
+Section: devel
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 56e151effbac1e957a245b395af6803a
+Size: 3092
+Filename: opkg-dev_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0 - Development files  Open Package
+ Manager  This package contains symbolic links, header files,   and
+ related items necessary for software development.
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: opkg-doc
+Version: 1:0.1.8+svnr649-r13.0
+Section: doc
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: d2396cc576e1dbdfe46856c79d4fa16f
+Size: 2780
+Filename: opkg-doc_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0 - Documentation files  Open Package
+ Manager  This package contains documentation.
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: opkg
+Version: 1:0.1.8+svnr649-r13.0
+Depends: opkg-config-base, libgcc1 (>= 4.7.2), update-alternatives-cworth, libopkg1 (>= 0.1.8+svnr649), libc0 (>= 0_9_33)
+Replaces: opkg-nogpg
+Section: base
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 58ae5d9bd195e24b4884400abb42e4a1
+Size: 7714
+Filename: opkg_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0  Open Package Manager
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
+Package: update-alternatives-cworth
+Version: 1:0.1.8+svnr649-r13.0
+Provides: update-alternatives
+Conflicts: update-alternatives-dpkg
+Section: base
+Architecture: i586
+Maintainer: Poky <poky@yoctoproject.org>
+MD5Sum: 260922314ddd53893ccb5afbdeb6861a
+Size: 2470
+Filename: update-alternatives-cworth_0.1.8+svnr649-r13.0_i586.ipk
+Source: svn://opkg.googlecode.com/svn;module=trunk;protocol=http file://obsolete_automake_macros.patch
+Description:  opkg version 0.1.8+svnr649-r13.0  Update alternatives
+OE: opkg
+HomePage: http://code.google.com/p/opkg/
+License: GPLv2+
+Priority: optional
+
