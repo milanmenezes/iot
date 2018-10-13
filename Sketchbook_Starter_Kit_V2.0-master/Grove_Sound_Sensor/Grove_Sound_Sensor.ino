@@ -10,7 +10,7 @@ const int pinLed   = 7;
 
 // Define the sound level above which to turn on the LED.
 // Change this to a larger value to require a louder noise level.
-int thresholdValue = 500;
+int thresholdValue = 700;
 
 void setup()
 {

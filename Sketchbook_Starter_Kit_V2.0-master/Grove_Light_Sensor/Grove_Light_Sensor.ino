@@ -12,7 +12,7 @@ const int pinLed   = 7;
 
 // Defines the light-sensor threshold value below which the LED will turn on.
 // Decrease this value to make the device more sensitive to ambient light, or vice-versa.
-int thresholdvalue = 400;
+int thresholdvalue = 200;
 
 void setup()
 {
